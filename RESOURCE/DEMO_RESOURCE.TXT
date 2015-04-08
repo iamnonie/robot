@@ -1,0 +1,30 @@
+***Variable***
+${BASE URL}    http://localhost:7272/html/    
+
+
+***Keyword***
+เข้าหน้า login
+	Open Browser    ${BASE URL}
+ทำการ login
+	[Arguments]    ${User name}    ${password}
+	Input Text    username_field    ${User name}
+	input Text    password_field    ${password}
+	click Button    LOGIN
+ผู้มช้งานต้องไปหน้า welcome
+	title should Be   Welcome Page
+	Page Should Contain Link    xpath=//p/a  
+	${link text}=    get text    xpath=//p/a 
+	##Log to console    ${link text} 
+	should be equal as strings    ${link text}    logout  
+	${location}=    get location
+	##log to console    ${location}  
+	location should be    ${BASE URL}welcome.html      
+
+ผู้มช้งานต้องไปหน้า Error
+	title should Be   Error Page
+	#Page Should Contain Link    xpath=//p/a  
+	#${link text}=    get text    xpath=//p/a 
+	##Log to console    ${link text} 
+	##${location}=    get location
+	##log to console    ${location}  
+	location should be    ${BASE URL}Error.html      
