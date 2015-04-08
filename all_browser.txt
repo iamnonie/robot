@@ -1,0 +1,10 @@
+****Setting****
+Library    Selenium2Library
+
+**** Testcases****
+Test run all browser 
+
+	@{all browser}=    Create List    firefox    gc    ie
+	:FOR    ${browser}    IN    @{all browser}
+	\    open browser    Http://google.com    ${browser}
+	\    Close browser

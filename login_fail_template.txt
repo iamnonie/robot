@@ -1,0 +1,25 @@
+***Setting***
+Library    Selenium2Library
+Suite Teardown     Close all Browsers
+Resource    RESOURCE/LOGIN_RESOURCE.TXT
+
+
+
+***Testcase***
+Rule of login failure 
+    [Template]    Workflow of iogin failure 
+    ${empty}    ${empty}
+    demo    ${empty}  
+    demo1    mode
+    demo    mode1 
+    ${empty}    mode  
+
+***KEYWORDS***
+Workflow of iogin failure 
+	[Arguments]    ${username}    ${password}
+	เข้าหน้า login
+	ทำการ login    ${empty}    ${empty}
+	ผู้มช้งานต้องไปหน้า Error
+ผู้มช้งานต้องไปหน้า Error
+	Title should Be    Error Page
+

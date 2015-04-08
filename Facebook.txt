@@ -1,0 +1,27 @@
+***Setting***
+Library    Selenium2Library
+Test Teardown     Close Browser
+
+***Variable***
+${BASE URL}    https://www.facebook.com 
+${User name}    nonie@live.se
+${password}    iamnonie302 
+
+***Testcase***
+FaceBook Login
+	เข้าหน้า login 
+	ทำการ login    ${User name}    ${password}     
+***Keyword***
+เข้าหน้า login
+	Open Browser    ${BASE URL}
+ทำการ login
+	[Arguments]    ${User name}    ${password}
+	click Element    u_0_l
+	Input Text    email    ${User name}
+	input Text    pass   ${password}
+	click Element    u_0_2
+	click button    checkpointSubmitButton
+	click button    checkpointSecondaryButton
+	click Element    u_0_10 
+	input text    u_0_10    Test Post Form Robot Framework
+	click button    post

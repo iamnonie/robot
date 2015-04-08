@@ -1,0 +1,36 @@
+***Setting***
+Library    Selenium2Library
+Test Teardown     Close Browser
+
+***Variable***
+
+***Testcase***
+Kaidee post sell
+	เข้าหน้า posting 
+	ทำการ add 
+    
+***Keyword***
+เข้าหน้า posting
+	Open Browser    http://www.kaidee.com/posting/
+
+ทำการ add 
+	#click Element    u_0_l
+	Input Text    item_topic    Test kaidee
+	click Element    add-category
+	set selenium speed    10
+	page should content link    //*[@id="cate-list"]/ul/li[25]/a/b
+	page should content link    //*[@id="cate-list-step-2"]/div/div/ul/li[11]/a
+	Input text    10990
+	#click element    input_uploadfile
+	choose file    input_uploadfile    C:\Users\Nonie\Desktop\DDD.jpg	 
+	select from list by lable    province    ปทุมธานี
+	select from list by lable    district    สามโคก
+	Input text    postcode    10200
+	input text    tel-1    029998989
+	click element    b-submit
+
+	#click button    checkpointSubmitButton
+	#click button    checkpointSecondaryButton
+	#click Element    u_0_10 
+	#input text    u_0_10    Test Post Form Robot Framework
+	#click button    post

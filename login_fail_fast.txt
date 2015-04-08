@@ -1,0 +1,23 @@
+***Setting***
+Resource    RESOURCE/LOGIN_RESOURCE.TXT
+Library    Selenium2Library
+Suite setup     เข้าหน้า Login
+Suite Teardown    Close browser
+Test template    Workflow of iogin failure
+
+
+***Testcase***
+Non input username and password    ${empty}     ${empty}  
+Input only username					demo    ${empty}
+Login wrong username                demo1    ${empty}
+login wrong password                ${empty}    dwdd
+Input Only password                 ${empty}    node
+***KEYWORDS***
+Workflow of iogin failure    
+	[Arguments]    ${username}    ${password}
+	Go to    ${BASE URL}
+	ทำการ login    ${empty}    ${empty}
+	ผู้มช้งานต้องไปหน้า Error
+ผู้มช้งานต้องไปหน้า Error
+	Title should Be    Error Page
+

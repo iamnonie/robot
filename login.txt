@@ -1,0 +1,30 @@
+***Setting***
+Library    Selenium2Library
+Test Teardown     Close Browser
+Resource    RESOURCE/LOGIN_RESOURCE.TXT
+
+
+
+***Testcase***
+Login Pass 1 
+	[Documentation]    Login pass with
+	...
+	...    Username = demo
+	...	   password = mode
+
+	[tags]    group1
+	Close Browser
+	เข้าหน้า login
+	ทำการ login    demo    mode
+	ผู้มช้งานต้องไปหน้า welcome
+Login Pass 2 
+	[Documentation]    Login pass with
+	...
+	...    Username = demo
+	...	   password = mode
+
+	[tags]    group2
+	Close Browser
+	เข้าหน้า login
+	ทำการ login    demo    mode
+	ผู้มช้งานต้องไปหน้า welcome

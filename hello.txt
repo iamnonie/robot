@@ -1,0 +1,14 @@
+***Setting***
+
+***Variable***
+&{MASSAGE}    Robot Fra
+
+
+***Testcase***
+Hello robot framework
+		Say hi robot
+
+***Keyword***
+Say hi robot
+		log to console    Rebot framwork
+ 

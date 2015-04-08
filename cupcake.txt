@@ -1,0 +1,57 @@
+***Setting***
+Library    Selenium2Library
+
+***Variable***
+
+
+
+***Testcase***
+Hello robot framework
+		[teardown]    Close Browser 
+		เข้า Google
+		ค้นหาคำว่า Cupcake
+		ต้องเจอ Cupcakey
+		###Close Browser###
+***Keyword***
+เข้า Google
+    Open Browser    http://www.google.com
+ค้นหาคำว่า Cupcake
+	input Text    lst-ib    Cupcake
+	Click Button    btnG
+ต้องเจอ Cupcake 
+	Wait Until Page Contains    Cupcaike    timeout=60   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

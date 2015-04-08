@@ -1,0 +1,38 @@
+***Setting***
+Library    Selenium2Library
+Test Teardown     Close Browser
+Resource    RESOURCE/LOGIN_RESOURCE.TXT
+
+
+
+***Testcase***
+Not input username and password 
+
+	Close Browser
+	เข้าหน้า login
+	ทำการ login    ${empty}    ${empty}
+	ผู้มช้งานต้องไปหน้า Error
+Input only username 
+	
+	Close Browser
+	เข้าหน้า login
+	ทำการ login    demo    ${empty}    
+	ผู้มช้งานต้องไปหน้า Error
+Login wrong username  
+
+	Close Browser
+	เข้าหน้า login
+	ทำการ login    demo1    mode    
+	ผู้มช้งานต้องไปหน้า Error
+login wrong password  
+	
+	Close Browser
+	เข้าหน้า login
+	ทำการ login    demo    mode1    
+	ผู้มช้งานต้องไปหน้า Error
+Input Only password 
+	
+	Close Browser
+	เข้าหน้า login
+	ทำการ login    ${empty}    mode   
+	ผู้มช้งานต้องไปหน้า Error
